@@ -1,4 +1,4 @@
-import pygame
+import pygame, random
 pygame.init()
 
 WIDTH = 800
@@ -8,10 +8,21 @@ BLACK = (0,0,0)
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 background = pygame.image.load("assets/Gemini_Generated_Image_43m9ik43m9ik43m91.png").convert()
+y = 0
+def uploadBackground():
+    # Fondo en movimiento
+    global y
+    y_relativa = y % background.get_rect().width
+    screen.blit(background, (0,y_relativa - background.get_rect().height))
+    if y_relativa < HEIGHT:
+        screen.blit(background, (0,y_relativa))
+    y += 5
+
+
 class Car(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("assets/auto 0.png").convert()
+        self.image = pygame.image.load("assets/auto0.png").convert()
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
         self.rect.centerx = WIDTH // 2
@@ -25,10 +36,17 @@ class Car(pygame.sprite.Sprite):
         if keystate[pygame.K_RIGHT]:
             self.speed_x = +5
         self.rect.x += self.speed_x
-        if self.rect.right > WIDTH:
-            self.rect.right = WIDTH
-        if self.rect.left < 0:
-            self.rect.left = 0
+        if self.rect.right > WIDTH-170:
+            self.rect.right = WIDTH-170
+        if self.rect.left < 170:
+            self.rect.left = 170
+
+
+
+
+
+
+
 
 
 
@@ -61,14 +79,10 @@ while running:
 
     all_sprites.update()
 
-
-
-
-
-
-    screen.blit(background,[0,0])
+    #screen.blit(background,[0,0])
+    uploadBackground()
+    all_sprites.draw(screen)
     pygame.display.flip()
-
 
 
 pygame.quit()
