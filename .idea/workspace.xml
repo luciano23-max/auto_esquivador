@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1962283-af11-4c64-b227-cf21de9b46ef" name="Changes" comment="ahora se ve el auto y el background se mueve pero esta bug hay que repararlo">
-      <change afterPath="$PROJECT_DIR$/.idea/auto_esquivador.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b1962283-af11-4c64-b227-cf21de9b46ef" name="Changes" comment="haciendo nuevos sprites y la clase ostacle">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_esquivador.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_esquivador.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +49,7 @@
     &quot;Python.auto_esquivador.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/210-P14/Downloads/proyecto/juego de informatica&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/210-P14/Downloads/proyecto/auto_esquivador&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
   }
 }</component>
@@ -102,13 +98,33 @@
       <option name="project" value="LOCAL" />
       <updated>1749729683967</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="haciendo nuevos sprites y la clase ostacle">
+      <option name="closed" value="true" />
+      <created>1749730720744</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749730720744</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="estructura basica del juego" />
     <MESSAGE value="termino lka estructura basica y la clase car esta cerca de terminarse solo falta que se muestre el sprite y que no se salga de la pantalla" />
     <MESSAGE value="ahora se ve el auto y el background se mueve pero esta bug hay que repararlo" />
-    <option name="LAST_COMMIT_MESSAGE" value="ahora se ve el auto y el background se mueve pero esta bug hay que repararlo" />
+    <MESSAGE value="haciendo nuevos sprites y la clase ostacle" />
+    <option name="LAST_COMMIT_MESSAGE" value="haciendo nuevos sprites y la clase ostacle" />
   </component>
 </project>
