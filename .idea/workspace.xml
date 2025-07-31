@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1962283-af11-4c64-b227-cf21de9b46ef" name="Changes" comment="todo nuevo">
+    <list default="true" id="b1962283-af11-4c64-b227-cf21de9b46ef" name="Changes" comment="todo nuevo de nuevo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/autoto.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/autoto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/autoto2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/autoto2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_esquivador.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_esquivador.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753359434337</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="todo nuevo de nuevo">
+      <option name="closed" value="true" />
+      <created>1753960570993</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1753960570993</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +153,7 @@
     <MESSAGE value="haciendo nuevos sprites y la clase ostacle" />
     <MESSAGE value="nuevo varias cosas" />
     <MESSAGE value="todo nuevo" />
-    <option name="LAST_COMMIT_MESSAGE" value="todo nuevo" />
+    <MESSAGE value="todo nuevo de nuevo" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo nuevo de nuevo" />
   </component>
 </project>
