@@ -7,7 +7,7 @@ HEIGHT = 600
 BLACK = (0, 0, 0)
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
-background = pygame.image.load("assets/fondo.png").convert()
+background = pygame.image.load("assets/background2.png").convert()
 y = 0
 
 # Carriles (ubicaciones X)
@@ -35,10 +35,9 @@ obstacle_images = []
 obstacle_paths = [
     "assets/autoto.png",
     "assets/autoto2.png",
-    "assets/milsim.png",
-    "assets/tonk.png",
-    "assets/motorola.png",
-    "assets/autobus.png"
+    "assets/tonkobisus.png",
+    "assets/ghost.png",
+    "assets/tractor.png"
 ]
 for img in obstacle_paths:
     obstacle_images.append(pygame.image.load(img).convert())
@@ -47,12 +46,14 @@ for img in obstacle_paths:
 class Car(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("assets/prota2.png").convert()
+        self.image = pygame.image.load("assets/prota.png").convert()
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
         self.rect.centerx = WIDTH // 2
         self.rect.bottom = HEIGHT - 10
         self.speed_x = 0
+        self.inmortal = False
+        self.inmortal_tiempo = 0
 
     def update(self):
         self.speed_x = 0
@@ -66,6 +67,19 @@ class Car(pygame.sprite.Sprite):
             self.rect.right = WIDTH - 248
         if self.rect.left < 264:
             self.rect.left = 264
+
+        # Manejo de invulnerabilidad temporal
+        if self.inmortal:
+            now = pygame.time.get_ticks()
+            if now - self.inmortal_tiempo >= 1000:
+                self.inmortal = False
+                self.image.set_alpha(255)  # Totalmente visible
+            else:
+                # Parpadeo: alterna entre transparente y visible
+                if (now // 100) % 2 == 0:
+                    self.image.set_alpha(100)
+                else:
+                    self.image.set_alpha(255)
 
 class Obstacle(pygame.sprite.Sprite):
     def __init__(self, ubicacion_label):
@@ -117,12 +131,14 @@ class Explosion(pygame.sprite.Sprite):
                 self.rect.center = centre
 
 def uploadBackground():
-    global y
+    global y, game_over
     y_relativa = y % background.get_rect().width
     screen.blit(background, (0, y_relativa - background.get_rect().height))
     if y_relativa < HEIGHT:
         screen.blit(background, (0, y_relativa))
-    y += 5
+
+    if not game_over:
+        y += 5
 
 def manejar_aparicion_obstaculos():
     tiempo_actual = pygame.time.get_ticks()
@@ -144,6 +160,15 @@ for ubicacion in ubicaciones_pos:
     obstacle_list.add(obstaculo)
     all_sprites.add(obstaculo)
 
+puntos = 0
+ultimo_punto_tiempo = pygame.time.get_ticks()
+vidas = 3
+fuente = pygame.font.SysFont("arial", 36)
+game_over = False
+explosiones = pygame.sprite.Group()
+
+
+
 # Main loop
 running = True
 while running:
@@ -154,19 +179,81 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    all_sprites.update()
 
-    # Colisiones con jugador
-    hits = pygame.sprite.spritecollide(car, obstacle_list, False)
-    if hits:
-        running = True
 
-    # Fondo y dibujado
-    uploadBackground()
-    all_sprites.draw(screen)
-    pygame.display.flip()
+    if not game_over:
+        all_sprites.update()
+        explosiones.update()
+
+        # Actualizar puntuación cada 100 ms
+        ahora = pygame.time.get_ticks()
+        if ahora - ultimo_punto_tiempo > 100:
+            puntos += 1
+            ultimo_punto_tiempo = ahora
+            ahora = pygame.time.get_ticks()
+        if ahora - ultimo_punto_tiempo > 100:
+            puntos += 1
+            ultimo_punto_tiempo = ahora
+
+        # Colisiones con jugador
+        hits = pygame.sprite.spritecollide(car, obstacle_list, False)
+        if hits:
+            # Crear explosión
+            explosion = Explosion(car.rect.center)
+            all_sprites.add(explosion)
+            explosiones.add(explosion)
+
+            vidas -= 1
+            if vidas <= 0:
+                game_over = True
+                game_over_time = pygame.time.get_ticks()
+            else:
+                # Reposicionar auto
+                car.rect.centerx = WIDTH // 2
+                car.rect.bottom = HEIGHT - 10
+                pygame.time.delay(500)  # pequeña pausa
+
+        # Fondo y dibujado
+        uploadBackground()
+        all_sprites.draw(screen)
+        # Mostrar puntuación
+        puntos_texto = fuente.render(f"Puntos: {puntos}", True, (255, 255, 0))
+        screen.blit(puntos_texto, (10, 50))
+
+        # Mostrar vidas
+        vidas_texto = fuente.render(f"Vidas: {vidas}", True, (255, 255, 255))
+        screen.blit(vidas_texto, (10, 10))
+
+        pygame.display.flip()
+
+    else:
+        uploadBackground()
+        all_sprites.draw(screen)
+        explosiones.update()
+        explosiones.draw(screen)
+
+        game_over_text = fuente.render("GAME OVER", True, (255, 0, 0))
+        screen.blit(game_over_text, (WIDTH // 2 - 100, HEIGHT // 2 - 40))
+
+        final_score = fuente.render(f"Puntuación final: {puntos}", True, (255, 255, 255))
+        screen.blit(final_score, (WIDTH // 2 - 130, HEIGHT // 2 + 10))
+
+        pygame.display.flip()
+
+        if pygame.time.get_ticks() - game_over_time > 3000:
+            running = False
 
 pygame.quit()
+
+
+
+
+
+
+
+
+
+
 
 
 

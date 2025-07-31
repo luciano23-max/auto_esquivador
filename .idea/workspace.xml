@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1962283-af11-4c64-b227-cf21de9b46ef" name="Changes" comment="nuevo varias cosas">
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion00.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/regularExplosion08.png" afterDir="false" />
+    <list default="true" id="b1962283-af11-4c64-b227-cf21de9b46ef" name="Changes" comment="todo nuevo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fondo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fondo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/autoto.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/autoto.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/autoto2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/autoto2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto_esquivador.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_esquivador.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +51,7 @@
     "Python.auto_esquivador.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/210-P14/Downloads/proyecto/auto_esquivador/assets",
+    "last_opened_file_path": "C:/Users/210-P14/Downloads/proyecto/auto_esquivador",
     "settings.editor.selected.configurable": "configurable.group.appearance"
   }
 }]]></component>
@@ -127,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752754913778</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="todo nuevo">
+      <option name="closed" value="true" />
+      <created>1753359434337</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753359434337</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +147,7 @@
     <MESSAGE value="ahora se ve el auto y el background se mueve pero esta bug hay que repararlo" />
     <MESSAGE value="haciendo nuevos sprites y la clase ostacle" />
     <MESSAGE value="nuevo varias cosas" />
-    <option name="LAST_COMMIT_MESSAGE" value="nuevo varias cosas" />
+    <MESSAGE value="todo nuevo" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo nuevo" />
   </component>
 </project>
